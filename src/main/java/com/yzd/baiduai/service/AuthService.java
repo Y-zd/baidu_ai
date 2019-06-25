@@ -15,6 +15,11 @@ import java.util.Map;
  */
 public class AuthService {
 
+
+    public static final String APP_ID = "10029165";
+    public static final String API_KEY = "VxXzxNwSQOORpgaWlGG04GhK";
+    public static final String SECRET_KEY = "VoLkO2GXlpcB6aQCv8wr1st95WPidxCS";
+
     /**
      * 获取权限token
      * @return 返回示例：
@@ -25,9 +30,9 @@ public class AuthService {
      */
     public static String getAuth() {
         // 官网获取的 API Key 更新为你注册的
-        String clientId = "VxXzxNwSQOORpgaWlGG04GhK";
+        String clientId = API_KEY;
         // 官网获取的 Secret Key 更新为你注册的
-        String clientSecret = "VoLkO2GXlpcB6aQCv8wr1st95WPidxCS";
+        String clientSecret = SECRET_KEY;
         return getAuth(clientId, clientSecret);
     }
 
