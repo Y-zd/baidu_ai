@@ -1,5 +1,5 @@
 FROM openjdk:8-jdk-alpine
-ADD target/a.jar /app/baiduai/
+ADD target/baiduai.jar /app/baiduai/
 RUN mkdir -p /app/baiduai/data
 ENV JAVA_OPTS=""
 EXPOSE  9008
