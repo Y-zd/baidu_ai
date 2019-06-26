@@ -38,7 +38,7 @@ public class SwaggerConfiguration {
 		Contact contact = new Contact(null, null, null);
 		ApiInfoBuilder apiInfoBuilder = new ApiInfoBuilder();
 		apiInfoBuilder.title("百度AI");
-		apiInfoBuilder.description("百度AI");
+		apiInfoBuilder.description("百度AI的简单使用");
 		apiInfoBuilder.version("1.0.0");
 		apiInfoBuilder.contact(contact);
 		return apiInfoBuilder.build();
