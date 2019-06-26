@@ -2,8 +2,8 @@ FROM java
 
 LABEL maintainer "misha.yang@daocloud.io"
 
-COPY /project/target/labs-demo-0.0.1-SNAPSHOT.jar  /usr/src/myapp/labs-demo-0.0.1-SNAPSHOT.jar
+COPY /project/target/baiduai-1.0-SNAPSHOT.jar  /usr/src/myapp/baiduai-1.0-SNAPSHOT.jar
 
-WORKDIR /usr/src/myapp/
+WORKDIR /app/servers/
 
-ENTRYPOINT java -jar $JAVA_OPTS labs-demo-0.0.1-SNAPSHOT.jar
+ENTRYPOINT java -jar $JAVA_OPTS baiduai-1.0-SNAPSHOT.jar
