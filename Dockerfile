@@ -1,4 +1,4 @@
-FROM centos:jdk1.8.0_151
+FROM openjdk:8-jdk-alpine
 ADD target/a.jar /app/baiduai/
 RUN mkdir -p /app/baiduai/data
 ENV JAVA_OPTS=""
