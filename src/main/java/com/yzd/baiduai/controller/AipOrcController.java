@@ -1,6 +1,6 @@
 package com.yzd.baiduai.controller;
 
-import com.yzd.baiduai.service.AipOrcService;
+import com.yzd.baiduai.service.orc.AipOrcService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.json.JSONArray;

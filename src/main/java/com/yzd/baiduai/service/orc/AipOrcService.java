@@ -1,4 +1,4 @@
-package com.yzd.baiduai.service;
+package com.yzd.baiduai.service.orc;
 
 import com.baidu.aip.ocr.AipOcr;
 import org.json.JSONObject;
