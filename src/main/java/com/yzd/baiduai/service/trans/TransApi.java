@@ -1,5 +1,7 @@
 package com.yzd.baiduai.service.trans;
 
+import com.yzd.baiduai.utils.UnicodeUtil;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,7 +14,10 @@ public class TransApi {
 
     public static String getTransResult(String query, String from, String to) {
         Map<String, String> params = buildParams(query, from, to);
-        return HttpGet.get(TRANS_API_HOST, params);
+        String s = HttpGet.get(TRANS_API_HOST, params);
+        String decode = UnicodeUtil.decode(s);
+        System.out.println(decode);
+        return decode;
     }
 
     private static Map<String, String> buildParams(String query, String from, String to) {

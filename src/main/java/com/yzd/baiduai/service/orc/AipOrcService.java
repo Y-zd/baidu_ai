@@ -1,6 +1,7 @@
 package com.yzd.baiduai.service.orc;
 
 import com.baidu.aip.ocr.AipOcr;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -23,10 +24,10 @@ public class AipOrcService {
      * @param bytes
      * @return
      */
-    public static JSONObject basicGeneral(byte[] bytes) {
+    public static String basicGeneral(byte[] bytes) {
         JSONObject res = client.basicGeneral(bytes, new HashMap<String, String>());
-        System.out.println(res.toString(2));
-        return res;
+        return jsonResult2String(res);
+
     }
 
     /**
@@ -35,10 +36,9 @@ public class AipOrcService {
      * @param bytes
      * @return
      */
-    public static JSONObject basicAccurateGeneral(byte[] bytes) {
+    public static String basicAccurateGeneral(byte[] bytes) {
         JSONObject res = client.basicAccurateGeneral(bytes, new HashMap<String, String>());
-        System.out.println(res.toString(2));
-        return res;
+        return jsonResult2String(res);
     }
 
 
@@ -48,10 +48,9 @@ public class AipOrcService {
      * @param bytes
      * @return
      */
-    public static JSONObject general(byte[] bytes) {
+    public static String general(byte[] bytes) {
         JSONObject res = client.general(bytes, new HashMap<String, String>());
-        System.out.println(res.toString(2));
-        return res;
+        return jsonResult2String(res);
     }
 
     /**
@@ -60,10 +59,9 @@ public class AipOrcService {
      * @param bytes
      * @return
      */
-    public static JSONObject accurateGeneral(byte[] bytes) {
+    public static String accurateGeneral(byte[] bytes) {
         JSONObject res = client.accurateGeneral(bytes, new HashMap<String, String>());
-        System.out.println(res.toString(2));
-        return res;
+        return jsonResult2String(res);
     }
 
     /**
@@ -72,10 +70,9 @@ public class AipOrcService {
      * @param bytes
      * @return
      */
-    public static JSONObject enhancedGeneral(byte[] bytes) {
+    public static String enhancedGeneral(byte[] bytes) {
         JSONObject res = client.enhancedGeneral(bytes, new HashMap<String, String>());
-        System.out.println(res.toString(2));
-        return res;
+        return jsonResult2String(res);
     }
 
     /**
@@ -84,11 +81,19 @@ public class AipOrcService {
      * @param bytes
      * @return
      */
-    public static JSONObject webImage(byte[] bytes) {
+    public static String webImage(byte[] bytes) {
         JSONObject res = client.webImage(bytes, new HashMap<String, String>());
-        System.out.println(res.toString(2));
-        return res;
+        return jsonResult2String(res);
     }
 
+
+    public static String jsonResult2String(JSONObject jsonObject) {
+        JSONArray wordsList = (JSONArray) jsonObject.get("words_result");
+        StringBuffer sb = new StringBuffer();
+        for (Object o : wordsList) {
+            sb.append(((JSONObject) o).get("words").toString()).append("\n");
+        }
+        return sb.toString();
+    }
 
 }
