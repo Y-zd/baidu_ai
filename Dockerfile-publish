@@ -1,9 +1,0 @@
-FROM java
-
-LABEL maintainer "misha.yang@daocloud.io"
-
-COPY /project/target/baiduai-1.0-SNAPSHOT.jar  /usr/src/myapp/baiduai-1.0-SNAPSHOT.jar
-
-WORKDIR /usr/src/myapp/
-
-ENTRYPOINT java -jar $JAVA_OPTS baiduai-1.0-SNAPSHOT.jar
