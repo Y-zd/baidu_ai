@@ -13,7 +13,9 @@ spring:
       force: true
 server: 
     port:
+    context-path: /ai
     tomcat: 
       uri-encoding: UTF-8
 log:
   enable: true
+

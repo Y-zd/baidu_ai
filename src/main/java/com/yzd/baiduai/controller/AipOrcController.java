@@ -4,10 +4,7 @@ import com.yzd.baiduai.service.orc.AipOrcService;
 import com.yzd.baiduai.utils.FileUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 /***
@@ -20,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Api(tags = "百度文字识别")
 @RestController
 @RequestMapping("/AipOrc")
+@CrossOrigin
 public class AipOrcController {
 
     @ApiOperation("通用文字识别")

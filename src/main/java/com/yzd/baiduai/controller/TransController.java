@@ -7,10 +7,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 /***
@@ -23,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Api(tags = "百度翻译")
 @RestController
 @RequestMapping("/Trans")
+@CrossOrigin
 public class TransController {
 
     @ApiOperation("通用文字识别（高精度版）")
