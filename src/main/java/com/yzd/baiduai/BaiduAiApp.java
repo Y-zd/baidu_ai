@@ -15,4 +15,5 @@ public class BaiduAiApp {
     public static void main(String[] args) {
         SpringApplication.run(BaiduAiApp.class);
     }
+
 }

@@ -11,11 +11,14 @@ spring:
       enabled: true
       charset: UTF-8
       force: true
+    multipart:
+      maxFileSize: 10Mb #设置单个文件的上传大小
+      maxRequestSize: 100Mb #设置单次请求的文件的上传总大小
 server: 
     port:
     context-path: /ai
     tomcat: 
       uri-encoding: UTF-8
+    connectionTimeout: 180000
 log:
   enable: true
-
