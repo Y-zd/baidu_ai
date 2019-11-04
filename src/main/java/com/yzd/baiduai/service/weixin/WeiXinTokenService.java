@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
 import java.util.concurrent.TimeUnit;
 
 /***
@@ -61,12 +62,12 @@ public class WeiXinTokenService {
             JSONObject jsonObject = JSONObject.parseObject(responseEntity.getBody());
             Object accessToken = jsonObject.get("access_token");
             if (accessToken == null) {
-                log.info("【获取微信token】,失败:{}", jsonObject.toString());
+                log.info("[get WeiXin token],error:{}", jsonObject.toString());
                 return null;
             }
             return accessToken.toString();
         } else {
-            log.info("【获取微信token】,请求异常:{}", responseEntity.toString());
+            log.info("[get WeiXin token],error:{}", responseEntity.toString());
             return null;
         }
     }

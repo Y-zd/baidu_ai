@@ -1,6 +1,5 @@
 package com.yzd.weixin;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Maps;
 import com.sun.glass.ui.Application;
@@ -13,12 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.http.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /***
  *
@@ -43,15 +42,15 @@ public class WeiXin {
     private WeiXinAuthService weiXinAuthService;
 
     @Test
-    public void auth(){
+    public void auth() {
         System.out.println(weiXinAuthService.getOpenId("0813YF2D0NT3al2C742D0GpV2D03YF2j"));
 
     }
 
     @Test
-    public void testDataBase(){
+    public void testDataBase() {
 
-        String message="[ Base URL:118.89.118.83:808/\n" +
+        String message = "[ Base URL:118.89.118.83:808/\n" +
                 " http: //118.89.118.83/v2/api-docs\n" +
                 "百度A的简单使用\n" +
                 "百度文字识别 Aip Orc Controller\n" +
@@ -60,7 +59,7 @@ public class WeiXin {
                 " Name\n" +
                 " Description\n";
         String s = message.replaceAll("\r|\n", "   ");
-        databaseService.save(BaiDuOrcReturnMessage.builder().user("user").fileName("123").message(s).build());
+        databaseService.save(BaiDuOrcReturnMessage.builder()._openid("user").fileName("123").message(s).build());
 
     }
 

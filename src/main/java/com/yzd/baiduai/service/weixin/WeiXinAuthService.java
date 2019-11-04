@@ -35,12 +35,12 @@ public class WeiXinAuthService {
             JSONObject jsonObject = JSONObject.parseObject(responseEntity.getBody());
             Object openid = jsonObject.get("openid");
             if (openid == null) {
-                log.info("【获取用户openid】,失败:{}", responseEntity.toString());
+                log.info("[get openid],success:{}", responseEntity.toString());
                 return null;
             }
             return openid.toString();
         } else {
-            log.info("【获取用户openid】,请求异常:{}", responseEntity.toString());
+            log.info("[get openid],error:{}", responseEntity.toString());
             return null;
         }
     }

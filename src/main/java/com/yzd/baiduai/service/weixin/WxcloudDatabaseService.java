@@ -41,9 +41,9 @@ public class WxcloudDatabaseService {
         map.put("query", "db.collection('" + COLLECTION + "').add({data:" + JSONObject.toJSONString(data) + "})");
         ResponseEntity<String> responseEntity = restTemplate.postForEntity(URL + weiXinTokenService.getToken(), map, String.class);
         if (HttpStatus.OK.equals(responseEntity.getStatusCode())) {
-            log.info("【操作云数据库】,结果:{}", responseEntity.toString());
+            log.info("success:{}", responseEntity.toString());
         } else {
-            log.info("【操作云数据库】,请求异常:{}", responseEntity.toString());
+            log.info("error:{}", responseEntity.toString());
         }
 
     }

@@ -16,7 +16,7 @@ import lombok.Data;
 public class BaiDuOrcReturnMessage {
 
     /**
-     * 用户
+     * 用户z
      */
     private String _openid;
     /**
