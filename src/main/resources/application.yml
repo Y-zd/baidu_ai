@@ -19,6 +19,6 @@ server:
     context-path: /ai
     tomcat: 
       uri-encoding: UTF-8
-    connectionTimeout: 180000
+    connectionTimeout: 18000000
 log:
   enable: true
